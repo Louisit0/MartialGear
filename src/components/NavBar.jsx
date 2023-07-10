@@ -1,13 +1,17 @@
+import { Link } from "wouter";
+
 const NavBar = () => {
   return (
-    <nav className="flex flex-row items-end gap-10 py-10">
-      <h2 className="text-3xl font-semibold">MartialGear</h2>
-      <a href="">Kickboxing</a>
-      <a href="">Boxeo</a>
-      <a href="">Taekwondo</a>
-      <a href="">Sobre nosotros</a>
-      <a href="">FAQ</a>
-    </nav>
+    <div>
+      <nav className="flex flex-row items-end gap-10 py-10">
+        <Link to="/" className="text-3xl font-semibold">
+          MartialGear
+        </Link>
+        <Link to="/productos">Productos</Link>
+        <Link to="/sobreNosotros">Sobre nosotros</Link>
+        <Link to="/products">FAQ</Link>
+      </nav>
+    </div>
   );
 };
 
