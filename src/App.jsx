@@ -8,15 +8,15 @@ function App() {
       <header>
         <NavBar />
       </header>
-      <main className="flex flex-row w-full">
+      <main className="flex flex-row w-full select-none">
         <div className="flex w-full relative">
           <img
             src="https://images.unsplash.com/photo-1486215397028-cb4f31efea3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2lja2JveGluZ3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
             alt="kickboxing"
-            className="rounded-3xl h-full w-full"
+            className="rounded-3xl brightness-50 hover:brightness-100 transition-all duration-300 ease-in-out cursor-pointer"
           />
           <div className="absolute top-0 left-0 m-10 text-white text-2xl font-bold">
-            <h2 className="text-5xl">Kickboxing</h2>
+            <h2 className="text-5xl cursor-pointer">Kickboxing</h2>
           </div>
           <div className="absolute bottom-0 right-0 m-10 text-white text-2xl font-bold">
             <svg
@@ -37,14 +37,14 @@ function App() {
         </div>
 
         <div className="flex flex-col w-3/5 items-end">
-          <div className="flex-1 rounded-xl ml-5 relative">
+          <div className="flex rounded-xl ml-5 relative">
             <img
               src="https://e0.pxfuel.com/wallpapers/376/556/desktop-wallpaper-mayweather-boxeo.jpg"
               alt="boxeo"
-              className="rounded-3xl"
+              className="rounded-3xl brightness-50 hover:brightness-100 transition-all duration-300 ease-in-out cursor-pointer"
             />
             <div className="absolute top-0 left-0 m-10 text-white text-2xl font-bold">
-              <h2 className="text-5xl">Boxeo</h2>
+              <h2 className="text-5xl cursor-pointer">Boxeo</h2>
             </div>
             <div className="absolute bottom-0 right-0 m-10 text-white text-2xl font-bold">
               <svg
@@ -63,14 +63,14 @@ function App() {
               </svg>
             </div>
           </div>
-          <div className="flex-1  rounded-xl h-full mt-5 ml-5 relative">
+          <div className="flex rounded-xl h-full mt-5 ml-5 relative ">
             <img
               src="https://blog.sportotal.com.ar/wp-content/uploads/2022/12/que-es-taekwondo-reglas-y-calificaciones.jpg"
               alt="taekwondo"
-              className="rounded-3xl"
+              className="rounded-3xl brightness-50 hover:brightness-100 transition-all duration-300 ease-in-out cursor-pointer"
             />
             <div className="absolute top-0 left-0 m-10 text-white text-2xl font-bold">
-              <h2 className="text-5xl">Taekwondo</h2>
+              <h2 className="text-5xl cursor-pointer">Taekwondo</h2>
             </div>
             <div className="absolute bottom-0 right-0 m-10 text-white text-2xl font-bold">
               <svg
