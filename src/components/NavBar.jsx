@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -9,7 +9,7 @@ const NavBar = () => {
         </Link>
         <Link to="/productos">Productos</Link>
         <Link to="/sobreNosotros">Sobre nosotros</Link>
-        <Link to="/products">FAQ</Link>
+        <Link to="/products">Carrito</Link>
       </nav>
     </div>
   );

@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Productos from "./pages/Productos";
 import SobreNosotros from "./pages/SobreNosotros";
 import "animate.css";
-import { Route, Switch } from "wouter";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -16,14 +16,14 @@ function App() {
         <NavBar />
       </header>
       <main>
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/productos" component={Productos} />
-          <Route path="/boxeo" component={Boxeo} />
-          <Route path="/kickboxing" component={Kickboxing} />
-          <Route path="/taekwondo" component={Taekwondo} />
-          <Route path="/sobreNosotros" component={SobreNosotros} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/productos" element={<Productos />}></Route>
+          <Route path="/sobreNosotros" element={<SobreNosotros />}></Route>
+          <Route path="/boxeo" element={<Boxeo />}></Route>
+          <Route path="/kickboxing" element={<Kickboxing />}></Route>
+          <Route path="/taekwondo" element={<Taekwondo />}></Route>
+        </Routes>
       </main>
     </div>
   );
