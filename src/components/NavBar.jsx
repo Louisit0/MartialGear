@@ -7,7 +7,7 @@ const NavBar = () => {
         <Link to="/" className="text-3xl font-semibold">
           PCGear
         </Link>
-        <div className="flex gap-8 items-center">
+        <div className="flex gap-4 text-sm md:gap-8 md:text-base items-center">
           <Link to="/productos">Productos</Link>
           <Link to="/sobreNosotros">Sobre nosotros</Link>
           <Link to="/">
