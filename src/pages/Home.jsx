@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <div className="mt-32">
-        <div className="w-full grid grid-cols-4 gap-3" style={{ height: 450 }}>
+        <div className="w-full h-96 grid md:grid-cols-4 gap-3 px-4">
           <div className="col-span-2 row-span-2 relative">
             <img
               src="https://i.rtings.com/assets/products/Cxz8Hmmj/samsung-odyssey-g4-g40b-s27bg40/design-medium.jpg"
@@ -54,8 +54,8 @@ const Home = () => {
       </div>
 
       <div className="mt-32">
-        <h3 className="text-xl font-bold">🔥 Productos más vendidos</h3>
-        <div className="grid grid-cols-4 mt-10 gap-4 pb-10">
+        <h3 className="text-xl font-bold mx-4">🔥 Productos más vendidos</h3>
+        <div className="grid md:grid-cols-4 mt-10 gap-4 pb-10 mx-4 md:mx-0">
           {dataProductos.map((producto) => (
             <Link
               key={producto.id}

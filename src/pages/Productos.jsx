@@ -4,7 +4,7 @@ import { dataProductos } from "../data/allData";
 const Productos = () => {
   return (
     <>
-      <div className="grid grid-cols-3 gap-4 mt-36">
+      <div className="grid md:grid-cols-3 gap-4 mt-36 mx-4 md:mx-0">
         {dataProductos.map((producto) => (
           <Link
             key={producto.id}
