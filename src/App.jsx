@@ -1,7 +1,5 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
-import Boxeo from "./pages/Categorias/Boxeo";
-import Kickboxing from "./pages/Categorias/Kickboxing";
 import ProductoDetalle from "./pages/Categorias/ProductoDetalle";
 import Home from "./pages/Home";
 import Productos from "./pages/Productos";
@@ -11,11 +9,11 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="bg-slate-50 h-screen w-4/5 mx-auto">
+    <div className="bg-slate-50">
       <header>
         <NavBar />
       </header>
-      <main>
+      <main className="max-w-6xl mx-auto">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/productos" element={<Productos />} />
