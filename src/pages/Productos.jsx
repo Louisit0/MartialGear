@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import { dataProductos } from "../data/allData";
+import Tabs from "../components/Tabs";
 
 const Productos = () => {
   return (
-    <>
-      <div className="grid md:grid-cols-3 gap-4 mt-36 mx-4 md:mx-0">
+    <div className="flex flex-col mt-36">
+      <Tabs />
+
+      <div className="grid md:grid-cols-3 gap-4 mx-4 md:mx-0">
         {dataProductos.map((producto) => (
           <Link
             key={producto.id}
@@ -26,7 +29,7 @@ const Productos = () => {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
