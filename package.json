@@ -12,7 +12,11 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "animate.css": "^4.1.1",
+<<<<<<< HEAD
     "firebase": "^10.2.0",
+=======
+    "firebase": "^8.6.8",
+>>>>>>> 0692fb019010e1e9e6b382efd6c51c214274c399
     "framer-motion": "^10.12.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
