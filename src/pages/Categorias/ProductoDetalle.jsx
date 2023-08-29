@@ -1,8 +1,14 @@
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { dataProductos } from "../../data/allData";
 import { useState } from "react";
 
-const ProductoDetalle = ({ toggleDrawer }) => {
+const ProductoDetalle = ({
+  notificationCount,
+  setNotificationCount,
+  setCarritoItems,
+}) => {
   const [cant, setCant] = useState(1);
   const { productosId } = useParams();
   const producto = dataProductos.find(
@@ -23,6 +29,23 @@ const ProductoDetalle = ({ toggleDrawer }) => {
       setCant((prevCant) => prevCant - 1);
       setPrecioTotal((prevPrecioTotal) => prevPrecioTotal - producto.precio);
     }
+  };
+
+  const handleButtonClick = () => {
+    setNotificationCount(notificationCount + 1);
+
+    // Agregar el producto al carrito
+    setCarritoItems((prevItems) => [...prevItems, producto]);
+
+    toast.success("¡Producto añadido al carrito!", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (
@@ -87,7 +110,7 @@ const ProductoDetalle = ({ toggleDrawer }) => {
           </div>
           <button
             className="p-4 bg-red-700 text-white uppercase mt-10"
-            onClick={toggleDrawer}
+            onClick={handleButtonClick}
           >
             Añadir al carrito
           </button>
