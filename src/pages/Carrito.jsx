@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +12,7 @@ const Carrito = ({
   setNotificationCount,
 }) => {
   const navigate = useNavigate();
+  const [total, setTotal] = useState(0);
 
   const deleteProduct = (productId) => {
     const productToDelete = carritoItems.find(
@@ -40,6 +42,14 @@ const Carrito = ({
       navigate("/");
     });
   };
+
+  useEffect(() => {
+    const calculatedTotal = carritoItems.reduce(
+      (acc, producto) => acc + producto.precio * producto.cantidad,
+      0
+    );
+    setTotal(calculatedTotal);
+  }, [carritoItems]);
 
   return (
     <div className="w-full h-full mt-32 relative">
@@ -74,16 +84,8 @@ const Carrito = ({
         </div>
         <div className="flex flex-col w-1/3 px-4">
           <div className="flex justify-between">
-            <span className="font-bold">Subtotal:</span>
-            <span className="font-bold">103.69 $:</span>
-          </div>
-          <div className="flex justify-between my-4">
-            <span>Impuesto(21%):</span>
-            <span>27.56 $</span>
-          </div>
-          <div className="flex justify-between">
             <span className="font-bold">Total:</span>
-            <span className="font-bold">131.25 $</span>
+            <span className="font-bold">{`$ ${total.toFixed(2)}`}</span>
           </div>
           <button
             className="py-4 px-14 bg-black text-white font-bold mt-6"
