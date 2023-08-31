@@ -81,7 +81,7 @@ const ProductoDetalle = ({
           <h2 className="font-bold text-3xl mb-4">{producto.nombre}</h2>
           <p>{producto.descripcion}</p>
           <div className="flex flex-row items-center justify-between mt-10">
-            <p className="font-bold text-xl">{producto.stock} disponibles!</p>
+            <p className="font-bold text-xl">Cantidad:</p>
             <div className="flex flex-row">
               <button
                 className="p-2 bg-white border border-black"

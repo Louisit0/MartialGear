@@ -76,7 +76,7 @@ const Home = () => {
                 <div className="flex flex-col px-4">
                   <h4 className="font-bold">{producto.nombre}</h4>
                   <p className="my-4 text-sm">{producto.descripcion}</p>
-                  <p className="text-green-600">{`$ ${producto.precio}`}</p>
+                  <p>{`$ ${producto.precio}`}</p>
                 </div>
               </div>
             </Link>
