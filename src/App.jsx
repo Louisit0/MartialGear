@@ -14,6 +14,7 @@ function App() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [notificationCount, setNotificationCount] = useState(0);
   const [carritoItems, setCarritoItems] = useState([]);
+  const [tabState, setTabState] = useState("");
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
@@ -32,7 +33,12 @@ function App() {
         <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/productos" element={<Productos />} />
+          <Route
+            path="/productos"
+            element={
+              <Productos tabState={tabState} setTabState={setTabState} />
+            }
+          />
           <Route
             path="/productos/:productosId"
             element={
