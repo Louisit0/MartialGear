@@ -69,18 +69,18 @@ const ProductoDetalle = ({
 
   return (
     <div className="w-full h-full mt-32 relative">
-      <div className="flex flex-row">
-        <div className="w-1/2">
+      <div className="flex flex-col-reverse md:flex-row">
+        <div className="w-full md:w-1/2">
           <img
             src={producto.imagen}
             alt={producto.nombre}
             className="object-cover h-full"
           />
         </div>
-        <div className="w-1/2 bg-gray-200 py-20 px-10">
+        <div className="w-full md:w-1/2 bg-gray-200 py-20 px-10">
           <h2 className="font-bold text-3xl mb-4">{producto.nombre}</h2>
           <p>{producto.descripcion}</p>
-          <div className="flex flex-row items-center justify-between mt-10">
+          <div className="flex flex-col md:flex-row items-center justify-between mt-10">
             <p className="font-bold text-xl">Cantidad:</p>
             <div className="flex flex-row">
               <button

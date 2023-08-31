@@ -25,7 +25,7 @@ const Productos = ({ tabState, setTabState }) => {
               <img
                 src={producto.imagen}
                 alt={producto.nombre}
-                className="object-cover mx-auto"
+                className="object-cover mx-auto w-60"
               />
               <div className="flex flex-col px-4">
                 <h4 className="font-bold">{producto.nombre}</h4>

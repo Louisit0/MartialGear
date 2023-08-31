@@ -10,9 +10,9 @@ const Tabs = ({ tabState, setTabState }) => {
   }, [tabState]);
 
   return (
-    <div className=" text-sm font-medium text-center text-gray-500  border-gray-200 dark:text-gray-400 dark:border-gray-700  mx-auto">
-      <ul className="flex flex-wrap  text-sm font-medium text-center text-gray-500 dark:text-gray-400 mb-7">
-        <li className="mr-2">
+    <div className=" text-sm font-medium text-center text-gray-500  border-gray-200 dark:text-gray-400 dark:border-gray-700 mx-auto">
+      <ul className="grid grid-cols-3 md:grid-cols-6 text-sm font-medium text-center text-gray-500 dark:text-gray-400 mb-7">
+        <li className="m-0">
           <a
             href="#"
             className={`${
@@ -26,7 +26,7 @@ const Tabs = ({ tabState, setTabState }) => {
             Todo
           </a>
         </li>
-        <li className="mr-2">
+        <li className="m-0">
           <a
             href="#"
             className={`${
@@ -40,7 +40,7 @@ const Tabs = ({ tabState, setTabState }) => {
             Monitores
           </a>
         </li>
-        <li className="mr-2">
+        <li className="m-0">
           <a
             href="#"
             className={` ${
@@ -53,7 +53,7 @@ const Tabs = ({ tabState, setTabState }) => {
             Mouses
           </a>
         </li>
-        <li className="mr-2">
+        <li className="m-0">
           <a
             href="#"
             className={` ${
@@ -66,7 +66,7 @@ const Tabs = ({ tabState, setTabState }) => {
             Teclados
           </a>
         </li>
-        <li className="mr-2">
+        <li className="m-0">
           <a
             href="#"
             className={` ${
@@ -79,7 +79,7 @@ const Tabs = ({ tabState, setTabState }) => {
             Mousepads
           </a>
         </li>
-        <li className="mr-2">
+        <li className="m-0">
           <a
             href="#"
             className={` ${
