@@ -3,12 +3,19 @@ import { Link } from "react-router-dom";
 import { dataProductos } from "../data/allData";
 import Tabs from "../components/Tabs";
 
-const Productos = () => {
+const Productos = ({ tabState, setTabState }) => {
+  const productosFiltrados = dataProductos.filter(
+    (producto) => producto.categoria === tabState
+  );
+
+  const productosAVisualizar =
+    tabState === "" ? dataProductos : productosFiltrados;
+
   return (
     <div className="flex flex-col mt-36">
-      <Tabs />
+      <Tabs tabState={tabState} setTabState={setTabState} />
       <div className="grid md:grid-cols-3 gap-4 mx-4 md:mx-0">
-        {dataProductos.map((producto) => (
+        {productosAVisualizar.map((producto) => (
           <Link
             key={producto.id}
             to={`/productos/${producto.id}`}
@@ -23,7 +30,7 @@ const Productos = () => {
               <div className="flex flex-col px-4">
                 <h4 className="font-bold">{producto.nombre}</h4>
                 <p className="my-4 text-sm">{producto.descripcion}</p>
-                <p className="text-green-600">{`$ ${producto.precio}`}</p>
+                <p>{`$ ${producto.precio}`}</p>
               </div>
             </div>
           </Link>
