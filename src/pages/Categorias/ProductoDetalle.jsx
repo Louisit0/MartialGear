@@ -7,6 +7,7 @@ import { useState } from "react";
 const ProductoDetalle = ({
   notificationCount,
   setNotificationCount,
+  carritoItems,
   setCarritoItems,
 }) => {
   const [cant, setCant] = useState(1);
@@ -34,8 +35,26 @@ const ProductoDetalle = ({
   const handleButtonClick = () => {
     setNotificationCount(notificationCount + 1);
 
-    // Agregar el producto al carrito
-    setCarritoItems((prevItems) => [...prevItems, producto]);
+    // Verificar si el producto ya está en el carrito
+    const existingProduct = carritoItems.find(
+      (item) => item.id === producto.id
+    );
+
+    if (existingProduct) {
+      // Actualizar la cantidad del producto existente
+      const updatedCart = carritoItems.map((item) =>
+        item.id === existingProduct.id
+          ? { ...item, cantidad: item.cantidad + 1 } // Actualizar la cantidad
+          : item
+      );
+      setCarritoItems(updatedCart);
+    } else {
+      // Agregar el producto al carrito
+      setCarritoItems((prevItems) => [
+        ...prevItems,
+        { ...producto, cantidad: 1 },
+      ]);
+    }
 
     toast.success("¡Producto añadido al carrito!", {
       position: "bottom-right",
