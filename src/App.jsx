@@ -5,10 +5,9 @@ import ProductoDetalle from "./pages/Categorias/ProductoDetalle";
 import Home from "./pages/Home";
 import Productos from "./pages/Productos";
 import Carrito from "./pages/Carrito";
-import SobreNosotros from "./pages/SobreNosotros";
 import "animate.css";
 import { Routes, Route } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className="bg-slate-50">
+    <div>
       <header>
         <NavBar
           drawerOpen={drawerOpen}
@@ -48,9 +47,15 @@ function App() {
           />
           <Route
             path="/carrito"
-            element={<Carrito carritoItems={carritoItems} />}
+            element={
+              <Carrito
+                carritoItems={carritoItems}
+                setCarritoItems={setCarritoItems}
+                notificationCount={notificationCount}
+                setNotificationCount={setNotificationCount}
+              />
+            }
           />
-          <Route path="/sobreNosotros" element={<SobreNosotros />} />
         </Routes>
       </main>
     </div>
