@@ -61,7 +61,7 @@ const Home = () => {
           🔥 Productos más vendidos
         </h3>
         <div className="grid md:grid-cols-4 mt-10 gap-4 pb-10 mx-4 md:mx-0">
-          {dataProductos.map((producto) => (
+          {dataProductos.slice(0, 4).map((producto) => (
             <Link
               key={producto.id}
               to={`/productos/${producto.id}`}
