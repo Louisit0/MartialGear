@@ -58,7 +58,7 @@ const Carrito = ({
   return (
     <>
       {carritoItems.length === 0 ? (
-        <div className="w-1/2 h-screen relative flex flex-col mx-auto items-center justify-center">
+        <div className="w-full md:w-1/2 h-screen relative flex flex-col mx-auto items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -85,10 +85,10 @@ const Carrito = ({
           </Link>
         </div>
       ) : (
-        <div className="w-full h-full mt-32 relative">
+        <div className="w-full h-full mt-32 relative px-4">
           <h2 className="text-4xl font-bold">Su carrito</h2>
-          <div className="flex flex-row justify-between mt-10">
-            <div className="flex flex-col w-3/5">
+          <div className="flex flex-col md:flex-row justify-between mt-10">
+            <div className="flex flex-col md:w-3/5">
               <p>{carritoItems.length === 0 ? "El carrito esta vacío" : ""}</p>
               {carritoItems.map((producto) => (
                 <div key={producto.id} className="h-full flex flex-col">
@@ -96,41 +96,59 @@ const Carrito = ({
                     <img
                       src={producto.imagen}
                       alt={producto.nombre}
-                      className="object-cover mr-8 h-36"
-                      width={144}
+                      className="object-cover md:mr-8 w-40 h-36 md:w-52"
+                      //   width={144}
                     />
-
                     <div className="flex flex-col p-4 justify-between w-full">
                       <div className="flex justify-between">
                         <div className="flex flex-col">
-                          <h4 className="font-bold">{producto.nombre}</h4>
-                          <p className="text-sm">{producto.descripcion}</p>
+                          <h4 className="font-bold text-sm md:text-base w-3/4 md:w-full">
+                            {producto.nombre}
+                          </h4>
+                          <p className="text-xs md:text-sm w-4/5 md:w-full">
+                            {producto.descripcion}
+                          </p>
                         </div>
                         <button
                           className="h-6 w-6"
                           onClick={() => deleteProduct(producto.id)}
                         >
-                          x
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="w-6 h-6 hover:text-red-500"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
                         </button>
                       </div>
 
                       <div className="flex justify-between">
-                        <p className="text-sm">Cantidad: {producto.cantidad}</p>
-                        <p className="font-bold">{`$ ${producto.precio}`}</p>
+                        <p className="text-xs md:text-sm">
+                          Cantidad: {producto.cantidad}
+                        </p>
+                        <p className="font-bold text-sm">{`$ ${producto.precio}`}</p>
                       </div>
                     </div>
                   </div>
-                  <hr className="my-9 bg-black" />
+                  <hr className="my-9" />
                 </div>
               ))}
             </div>
-            <div className="flex flex-col w-1/3 px-4">
+            <div className="flex flex-col md:w-1/3 px-4">
               <div className="flex justify-between">
                 <span className="font-bold">Total:</span>
                 <span className="font-bold">{`$ ${total.toFixed(2)}`}</span>
               </div>
               <button
-                className="py-4 px-14 bg-black text-white font-bold mt-6"
+                className="py-4 px-14 bg-black text-white font-bold uppercase mt-6 mb-7"
                 onClick={comprar}
               >
                 Finalizar pedido
