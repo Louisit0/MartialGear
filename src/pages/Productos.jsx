@@ -11,7 +11,7 @@ const Productos = ({ tabState, setTabState }) => {
     tabState === "" ? dataProductos : productosFiltrados;
 
   return (
-    <div className="flex flex-col mt-36">
+    <div className="flex flex-col mt-36 mb-8">
       <Tabs tabState={tabState} setTabState={setTabState} />
       <div className="grid md:grid-cols-3 gap-4 mx-4 md:mx-0">
         {productosAVisualizar.map((producto) => (
