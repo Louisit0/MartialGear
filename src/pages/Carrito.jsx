@@ -12,6 +12,7 @@ const Carrito = ({
   setNotificationCount,
 }) => {
   const navigate = useNavigate();
+
   const [total, setTotal] = useState(0);
 
   const deleteProduct = (productId) => {
@@ -28,6 +29,24 @@ const Carrito = ({
 
       setNotificationCount(notificationCount - productToDelete.cantidad);
     }
+  };
+
+  const decreaseVal = (productId) => {
+    const updatedCart = carritoItems.map((producto) =>
+      producto.id === productId && producto.cantidad > 1
+        ? { ...producto, cantidad: producto.cantidad - 1 }
+        : producto
+    );
+    setCarritoItems(updatedCart);
+  };
+
+  const increaseVal = (productId) => {
+    const updatedCart = carritoItems.map((producto) =>
+      producto.id === productId
+        ? { ...producto, cantidad: producto.cantidad + 1 }
+        : producto
+    );
+    setCarritoItems(updatedCart);
   };
 
   const comprar = () => {
@@ -130,11 +149,25 @@ const Carrito = ({
                         </button>
                       </div>
 
-                      <div className="flex justify-between">
-                        <p className="text-xs md:text-sm">
-                          Cantidad: {producto.cantidad}
-                        </p>
-                        <p className="font-bold text-sm">{`$ ${producto.precio}`}</p>
+                      <div className="flex justify-between items-center">
+                        <p className="text-xs md:text-sm">Cantidad:</p>
+                        <button
+                          onClick={() => decreaseVal(producto.id)}
+                          className="bg-black rounded-full text-white py-1 px-3 text-lg"
+                        >
+                          -
+                        </button>
+                        {producto.cantidad}
+                        <button
+                          onClick={() => increaseVal(producto.id)}
+                          className="bg-black rounded-full text-white py-1 px-3 text-lg"
+                        >
+                          +
+                        </button>
+
+                        <p className="font-bold text-sm">{`$ ${
+                          producto.precio * producto.cantidad
+                        }`}</p>
                       </div>
                     </div>
                   </div>
