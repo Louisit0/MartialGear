@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import { dataProductos } from "../data/allData";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }} // Estado inicial (invisible)
+      animate={{ opacity: 1 }} // Estado animado (visible)
+      exit={{ opacity: 0 }} // Estado de salida (invisible)
+    >
       <div className="mt-32">
         <div
           className="w-full grid md:grid-cols-4 gap-3 px-4 md:px-0"
@@ -124,7 +129,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 
