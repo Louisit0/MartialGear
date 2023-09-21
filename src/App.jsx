@@ -12,7 +12,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [notificationCount, setNotificationCount] = useState(0);
   const [carritoItems, setCarritoItems] = useState([]);
   const [tabState, setTabState] = useState("");
 
@@ -26,7 +25,7 @@ function App() {
         <NavBar
           drawerOpen={drawerOpen}
           toggleDrawer={toggleDrawer}
-          notificationCount={notificationCount}
+          carritoItems={carritoItems}
         />
       </header>
       <main className="max-w-6xl mx-auto">
@@ -44,8 +43,6 @@ function App() {
             element={
               <ProductoDetalle
                 toggleDrawer={toggleDrawer}
-                notificationCount={notificationCount}
-                setNotificationCount={setNotificationCount}
                 carritoItems={carritoItems}
                 setCarritoItems={setCarritoItems}
               />
@@ -57,8 +54,6 @@ function App() {
               <Carrito
                 carritoItems={carritoItems}
                 setCarritoItems={setCarritoItems}
-                notificationCount={notificationCount}
-                setNotificationCount={setNotificationCount}
               />
             }
           />
