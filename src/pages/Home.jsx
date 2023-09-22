@@ -63,11 +63,11 @@ const Home = () => {
 
       <div className="mt-32">
         <div className="flex flex-row justify-between">
-          <h3 className="text-xl font-bold mx-4 md:mx-0">
+          <h3 className="text-base md:text-xl font-bold px-4 md:mx-0">
             🔥 Productos más vendidos
           </h3>
           <Link
-            className="flex flex-row text-gray-500 hover:text-black"
+            className="flex flex-row text-gray-500 hover:text-black mr-4 text-sm items-center"
             to="/productos"
           >
             Ver más
@@ -100,7 +100,7 @@ const Home = () => {
                   alt={producto.nombre}
                   className="object-cover mx-auto w-60"
                 />
-                <div className="flex flex-col px-4">
+                <div className="flex flex-col px-4 mt-2">
                   <p className="text-sm text-gray-400">{producto.categoria}</p>
                   <h4 className="font-bold text-base">{producto.nombre}</h4>
                   <div className="flex flex-row justify-between items-center mt-6 mb-3">
