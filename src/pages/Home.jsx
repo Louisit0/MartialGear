@@ -9,54 +9,52 @@ const Home = () => {
       animate={{ opacity: 1 }} // Estado animado (visible)
       exit={{ opacity: 0 }} // Estado de salida (invisible)
     >
-      <div className="mt-32">
-        <div
-          className="w-full grid md:grid-cols-4 gap-3 px-4 md:px-0"
-          style={{ height: 450 }}
-        >
-          <div className="col-span-2 row-span-2 relative">
+      <div
+        className="w-full grid md:grid-cols-4 gap-3 px-4 md:px-0 mt-36"
+        style={{ height: 450 }}
+      >
+        <div className="col-span-2 row-span-2 relative">
+          <img
+            src="https://i.rtings.com/assets/products/Cxz8Hmmj/samsung-odyssey-g4-g40b-s27bg40/design-medium.jpg"
+            alt=""
+            className="object-cover h-full"
+          />
+          <p className="text-3xl font-bold absolute bottom-5 left-5 text-white">
+            Monitores
+          </p>
+        </div>
+
+        <div className="row-span-2 relative">
+          <img
+            src="https://media.karousell.com/media/photos/products/2021/8/17/tiger_esports_eba_1629196882_1e0c9ade.jpg"
+            alt=""
+            className="object-cover h-full"
+          />
+          <p className="text-3xl font-bold absolute bottom-5 left-5 text-white">
+            Mousepads
+          </p>
+        </div>
+
+        <div className="grid grid-rows-2 row-span-2 gap-3">
+          <div className=" relative">
             <img
-              src="https://i.rtings.com/assets/products/Cxz8Hmmj/samsung-odyssey-g4-g40b-s27bg40/design-medium.jpg"
+              src="https://i.rtings.com/assets/products/lFKKRdTZ/logitech-g-pro-x-superlight/design-medium.jpg"
               alt=""
               className="object-cover h-full"
             />
             <p className="text-3xl font-bold absolute bottom-5 left-5 text-white">
-              Monitores
+              Mouses
             </p>
           </div>
-
-          <div className="row-span-2 relative">
+          <div className=" relative">
             <img
-              src="https://media.karousell.com/media/photos/products/2021/8/17/tiger_esports_eba_1629196882_1e0c9ade.jpg"
+              src="https://i.rtings.com/assets/products/MVMnbcAt/keychron-v-series/design-medium.jpg"
               alt=""
               className="object-cover h-full"
             />
             <p className="text-3xl font-bold absolute bottom-5 left-5 text-white">
-              Mousepads
+              Teclados
             </p>
-          </div>
-
-          <div className="grid grid-rows-2 row-span-2 gap-3">
-            <div className=" relative">
-              <img
-                src="https://i.rtings.com/assets/products/lFKKRdTZ/logitech-g-pro-x-superlight/design-medium.jpg"
-                alt=""
-                className="object-cover h-full"
-              />
-              <p className="text-3xl font-bold absolute bottom-5 left-5 text-white">
-                Mouses
-              </p>
-            </div>
-            <div className=" relative">
-              <img
-                src="https://i.rtings.com/assets/products/MVMnbcAt/keychron-v-series/design-medium.jpg"
-                alt=""
-                className="object-cover h-full"
-              />
-              <p className="text-3xl font-bold absolute bottom-5 left-5 text-white">
-                Teclados
-              </p>
-            </div>
           </div>
         </div>
       </div>
