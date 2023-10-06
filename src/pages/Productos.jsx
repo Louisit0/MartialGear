@@ -23,7 +23,7 @@ const Productos = ({ tabState, setTabState }) => {
           {productosAVisualizar.map((producto) => (
             <motion.div
               key={producto.id}
-              className="cursor-pointer bg-white border border-gray-200 shadow-sm rounded-lg"
+              className="cursor-pointer bg-white border border-gray-200 shadow-sm hover:shadow rounded-lg"
               initial={{ opacity: 0 }} // Estado inicial (invisible)
               animate={{ opacity: 1 }} // Estado animado (visible)
               exit={{ opacity: 0 }} // Estado de salida (invisible)
