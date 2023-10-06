@@ -19,7 +19,7 @@ const Home = () => {
             alt=""
             className="object-cover h-full"
           />
-          <p className="text-3xl font-bold absolute bottom-5 left-5 text-white">
+          <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
             Monitores
           </p>
         </div>
@@ -30,7 +30,7 @@ const Home = () => {
             alt=""
             className="object-cover h-full"
           />
-          <p className="text-3xl font-bold absolute bottom-5 left-5 text-white">
+          <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
             Mousepads
           </p>
         </div>
@@ -42,7 +42,7 @@ const Home = () => {
               alt=""
               className="object-cover h-full"
             />
-            <p className="text-3xl font-bold absolute bottom-5 left-5 text-white">
+            <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
               Mouses
             </p>
           </div>
@@ -52,7 +52,7 @@ const Home = () => {
               alt=""
               className="object-cover h-full"
             />
-            <p className="text-3xl font-bold absolute bottom-5 left-5 text-white">
+            <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
               Teclados
             </p>
           </div>
@@ -61,7 +61,7 @@ const Home = () => {
 
       <div className="mt-32">
         <div className="flex flex-row justify-between">
-          <h3 className="text-base md:text-xl font-bold px-4 md:mx-0">
+          <h3 className="text-sm md:text-xl font-bold px-4 md:mx-0">
             🔥 Productos más vendidos
           </h3>
           <Link

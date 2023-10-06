@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const NavBar = ({ carritoItems }) => {
   return (
     <div>
-      <nav className="flex flex-row fixed top-0 bg-white z-50 w-full justify-between py-10 px-4 md:px-36">
+      <nav className="flex flex-row fixed top-0 bg-white z-50 w-full justify-between py-5 px-4 md:px-36">
         <Link to="/" className="text-3xl font-semibold">
           <img
             src="https://www.madkat.store/images/logo-black.png"
@@ -12,7 +12,7 @@ const NavBar = ({ carritoItems }) => {
             width={50}
           />
         </Link>
-        <div className="flex gap-4 text-sm md:gap-8 items-center">
+        <div className="flex gap-8 text-sm items-center">
           <Link to="/productos" className="flex flex-row gap-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,10 +33,14 @@ const NavBar = ({ carritoItems }) => {
                 d="M6 6h.008v.008H6V6z"
               />
             </svg>
-            Productos
+            <span className="hidden md:block">Productos</span>
           </Link>
           {/* Animar cuando el carrito sea mayor a 0 */}
-          <Link to="/Carrito" className={`flex flex-row gap-3 items-center}`}>
+          <Link
+            to="/Carrito"
+            className={`flex flex-row gap-3 items-center
+            `}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -51,7 +55,7 @@ const NavBar = ({ carritoItems }) => {
                 d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
               />
             </svg>
-            <p>Carrito</p>
+            <span className="hidden md:block">Carrito</span>
           </Link>
         </div>
       </nav>
