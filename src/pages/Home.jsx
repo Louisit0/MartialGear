@@ -61,11 +61,11 @@ const Home = () => {
 
       <div className="mt-32">
         <div className="flex flex-row justify-between">
-          <h3 className="text-sm md:text-xl font-bold px-4 md:mx-0">
+          <h3 className="text-sm md:text-xl font-bold px-4 md:px-0 md:mx-0">
             🔥 Productos más vendidos
           </h3>
           <Link
-            className="flex flex-row text-gray-500 hover:text-black mr-4 text-sm items-center"
+            className="flex flex-row text-gray-500 hover:text-black mr-4 md:mr-0 text-sm items-center"
             to="/productos"
           >
             Ver más

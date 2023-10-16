@@ -36,7 +36,7 @@ const ProductoDetalle = ({ carritoItems, setCarritoItems }) => {
 
     toast.success("¡Producto añadido al carrito!", {
       position: "bottom-right",
-      autoClose: 1500,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
