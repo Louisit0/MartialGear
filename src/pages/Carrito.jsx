@@ -171,9 +171,9 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                             +
                           </button>
 
-                          <p className="font-bold text-sm">{`$ ${
+                          <p className="font-bold text-sm">{`$ ${(
                             producto.precio * producto.cantidad
-                          }`}</p>
+                          ).toLocaleString()}`}</p>
                         </div>
                       </div>
                     </div>
@@ -184,7 +184,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
               <div className="flex flex-col md:w-1/3 px-4">
                 <div className="flex justify-between">
                   <span className="font-bold">Total:</span>
-                  <span className="font-bold">{`$ ${total.toFixed(2)}`}</span>
+                  <span className="font-bold">{`$ ${total.toLocaleString()}`}</span>
                 </div>
                 <button
                   className="py-4 px-14 bg-black text-white font-bold uppercase mt-6 mb-7"

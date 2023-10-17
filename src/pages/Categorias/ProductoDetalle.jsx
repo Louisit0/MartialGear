@@ -86,7 +86,7 @@ const ProductoDetalle = ({ carritoItems, setCarritoItems }) => {
                 </div>
                 <p>-</p>
 
-                <p className="font-bold">${producto.precio}</p>
+                <p className="font-bold">${producto.precio.toLocaleString()}</p>
               </div>
               <button
                 className="p-4 bg-black text-white uppercase font-bold mt-10 md:w-1/2"

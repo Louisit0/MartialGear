@@ -119,7 +119,7 @@ const Home = () => {
                         {producto.puntuacion}
                       </p>
                     </div>
-                    <p className="font-bold">{`$ ${producto.precio}`}</p>
+                    <p className="font-bold">{`$ ${producto.precio.toLocaleString()}`}</p>
                   </div>
                 </div>
               </div>
