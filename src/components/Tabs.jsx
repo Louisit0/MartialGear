@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const Tabs = ({ tabState, setTabState }) => {
   const cambiarTab = (categoria) => {
