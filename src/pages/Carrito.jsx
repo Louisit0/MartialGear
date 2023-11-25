@@ -130,7 +130,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                             <h4 className="font-bold text-sm md:text-base w-3/4 md:w-full">
                               {producto.nombre}
                             </h4>
-                            <p className="text-xs md:text-sm w-4/5 md:w-full">
+                            <p className="text-xs md:text-sm md:w-full my-2">
                               {producto.descripcion}
                             </p>
                           </div>
@@ -155,23 +155,24 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                           </button>
                         </div>
 
-                        <div className="flex justify-between items-center">
-                          <p className="text-xs md:text-sm">Cantidad:</p>
-                          <button
-                            onClick={() => decreaseVal(producto.id)}
-                            className="bg-black rounded-full text-white py-1 px-3 text-lg"
-                          >
-                            -
-                          </button>
-                          {producto.cantidad}
-                          <button
-                            onClick={() => increaseVal(producto.id)}
-                            className="bg-black rounded-full text-white py-1 px-3 text-lg"
-                          >
-                            +
-                          </button>
-
-                          <p className="font-bold text-sm">{`$ ${(
+                        <div className="flex flex-col md:justify-between md:items-center mt-2">
+                          <p className="text-xs md:text-sm mb-2">Cantidad:</p>
+                          <div className="flex justify-between items-center">
+                            <button
+                              onClick={() => decreaseVal(producto.id)}
+                              className="bg-black rounded-full text-white py-1 px-3 text-lg"
+                            >
+                              -
+                            </button>
+                            {producto.cantidad}
+                            <button
+                              onClick={() => increaseVal(producto.id)}
+                              className="bg-black rounded-full text-white py-1 px-3 text-lg"
+                            >
+                              +
+                            </button>
+                          </div>
+                          <p className="font-bold text-sm text-center">{`$ ${(
                             producto.precio * producto.cantidad
                           ).toLocaleString()}`}</p>
                         </div>
