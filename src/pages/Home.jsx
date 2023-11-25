@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { dataProductos } from "../data/allData";
 import { motion } from "framer-motion";
+import { rtingsg4, gproside, padtiger, keycrone } from "../assets/Images";
 
 const Home = () => {
   return (
@@ -14,22 +15,14 @@ const Home = () => {
         style={{ height: 450 }}
       >
         <div className="col-span-2 row-span-2 relative">
-          <img
-            src="https://i.rtings.com/assets/products/Cxz8Hmmj/samsung-odyssey-g4-g40b-s27bg40/design-medium.jpg"
-            alt=""
-            className="object-cover h-full"
-          />
+          <img src={rtingsg4} alt="" className="object-cover h-full" />
           <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
             Monitores
           </p>
         </div>
 
         <div className="row-span-2 relative">
-          <img
-            src="https://media.karousell.com/media/photos/products/2021/8/17/tiger_esports_eba_1629196882_1e0c9ade.jpg"
-            alt=""
-            className="object-cover h-full"
-          />
+          <img src={padtiger} alt="" className="object-cover h-full" />
           <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
             Mousepads
           </p>
@@ -37,21 +30,13 @@ const Home = () => {
 
         <div className="grid grid-rows-2 row-span-2 gap-3">
           <div className=" relative">
-            <img
-              src="https://i.rtings.com/assets/products/lFKKRdTZ/logitech-g-pro-x-superlight/design-medium.jpg"
-              alt=""
-              className="object-cover h-full"
-            />
+            <img src={gproside} alt="" className="object-cover h-full" />
             <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
               Mouses
             </p>
           </div>
           <div className=" relative">
-            <img
-              src="https://i.rtings.com/assets/products/MVMnbcAt/keychron-v-series/design-medium.jpg"
-              alt=""
-              className="object-cover h-full"
-            />
+            <img src={keycrone} alt="" className="object-cover h-full" />
             <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
               Teclados
             </p>
