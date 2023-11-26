@@ -14,7 +14,7 @@ const Home = () => {
       exit={{ opacity: 0 }} // Estado de salida (invisible)
     >
       <div
-        className="w-full grid md:grid-cols-4 gap-3 px-4 md:px-0 mt-36"
+        className="w-full grid md:grid-cols-4 gap-3 px-4 md:px-0 mt-28 md:mt-36"
         style={{ height: 450 }}
       >
         <div className="col-span-2 row-span-2 relative">

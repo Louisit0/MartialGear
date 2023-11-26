@@ -21,7 +21,7 @@ function App() {
   };
 
   return (
-    <div className="relative">
+    <div>
       <header>
         <NavBar
           drawerOpen={drawerOpen}
