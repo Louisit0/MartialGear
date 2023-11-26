@@ -99,7 +99,10 @@ const Home = () => {
                 <img
                   src={producto.imagen}
                   alt={producto.nombre}
-                  className="object-cover mx-auto w-60"
+                  className={`object-cover mx-auto w-60 ${
+                    isLoading ? "animate-pulse" : ""
+                  }`}
+                  onLoad={() => setIsLoading(false)}
                 />
                 <div className="flex flex-col px-4 mt-2">
                   <p className="text-sm text-gray-400">{producto.categoria}</p>

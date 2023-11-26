@@ -20,9 +20,9 @@ const Productos = ({ tabState, setTabState }) => {
       animate={{ opacity: 1 }} // Estado animado (visible)
       exit={{ opacity: 0 }} // Estado de salida (invisible)
     >
-      <div className="flex flex-col mt-36 mb-8">
+      <div className="flex flex-col mt-36">
         <Tabs tabState={tabState} setTabState={setTabState} />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4 ">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4">
           {productosAVisualizar.map((producto) => (
             <motion.div
               key={producto.id}

@@ -9,6 +9,7 @@ import "animate.css";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/Footer";
 
 function App() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -20,7 +21,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="relative">
       <header>
         <NavBar
           drawerOpen={drawerOpen}
@@ -28,7 +29,7 @@ function App() {
           carritoItems={carritoItems}
         />
       </header>
-      <main className="max-w-6xl mx-auto">
+      <main className="max-w-6xl mx-auto mb-44">
         <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -59,6 +60,7 @@ function App() {
           />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }
