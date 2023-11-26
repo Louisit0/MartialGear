@@ -2,7 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { dataProductos } from "../data/allData";
 import { motion } from "framer-motion";
-import { rtingsg4, gproside, padtiger, keycrone } from "../assets/Images";
+import {
+  rtingsg4,
+  gproside,
+  padtiger,
+  keycrone,
+  logig,
+  logigpros,
+} from "../assets/Images";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,46 +25,67 @@ const Home = () => {
         style={{ height: 450 }}
       >
         <div className="col-span-2 row-span-2 relative">
-          <img
-            src={rtingsg4}
-            alt="rtingsg4"
-            className={`object-cover h-full ${
-              isLoading ? "animate-pulse" : ""
-            }`}
-            onLoad={() => setIsLoading(false)}
-          />
-          <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
-            Monitores
-          </p>
+          <Link to="/productos">
+            <img
+              src={rtingsg4}
+              alt="rtingsg4"
+              className={`object-cover h-full ${
+                isLoading ? "animate-pulse" : ""
+              }`}
+              onLoad={() => setIsLoading(false)}
+            />
+            <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
+              Monitores
+            </p>
+          </Link>
         </div>
 
         <div className="row-span-2 relative">
-          <img src={padtiger} alt="padtiger" className="object-cover h-full" />
-          <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
-            Mousepads
-          </p>
+          <Link to="/productos">
+            <img
+              src={padtiger}
+              alt="padtiger"
+              className={`object-cover h-full ${
+                isLoading ? "animate-pulse" : ""
+              }`}
+              onLoad={() => setIsLoading(false)}
+            />
+            <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
+              Mousepads
+            </p>
+          </Link>
         </div>
 
         <div className="grid grid-rows-2 row-span-2 gap-3">
-          <div className=" relative">
-            <img
-              src={gproside}
-              alt="gproside"
-              className="object-cover h-full"
-            />
-            <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
-              Mouses
-            </p>
+          <div className="relative">
+            <Link to="/productos">
+              <img
+                src={gproside}
+                alt="gproside"
+                className={`object-cover h-full ${
+                  isLoading ? "animate-pulse" : ""
+                }`}
+                onLoad={() => setIsLoading(false)}
+              />
+              <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
+                Mouses
+              </p>
+            </Link>
           </div>
           <div className=" relative">
-            <img
-              src={keycrone}
-              alt="keycrone"
-              className="object-cover h-full"
-            />
-            <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
-              Teclados
-            </p>
+            <Link to="/productos">
+              <img
+                src={keycrone}
+                alt="keycrone"
+                className={`object-cover h-full ${
+                  isLoading ? "animate-pulse" : ""
+                }`}
+                onLoad={() => setIsLoading(false)}
+              />
+              <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
+                Teclado
+              </p>
+            </Link>
           </div>
         </div>
       </div>
