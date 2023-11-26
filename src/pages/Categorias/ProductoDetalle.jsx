@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { dataProductos } from "../../data/allData";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const ProductoDetalle = ({ carritoItems, setCarritoItems }) => {
@@ -88,12 +88,32 @@ const ProductoDetalle = ({ carritoItems, setCarritoItems }) => {
 
                 <p className="font-bold">${producto.precio.toLocaleString()}</p>
               </div>
-              <button
-                className="p-4 bg-black text-white uppercase font-bold mt-10 md:w-1/2"
+              <Link
+                to="/carrito"
+                className="p-4 bg-black text-white uppercase font-bold mt-10 md:w-1/2 text-center"
                 onClick={handleButtonClick}
               >
                 Añadir al carrito
-              </button>
+              </Link>
+              <Link
+                to="/productos"
+                className="mt-4 w-8 flex justify-start items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
+                  />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
