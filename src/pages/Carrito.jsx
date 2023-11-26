@@ -109,76 +109,96 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
           exit={{ opacity: 0 }} // Estado de salida (invisible)
         >
           <div className="w-full h-full mt-32 relative px-4">
-            <h2 className="text-4xl font-bold">Su carrito</h2>
+            <div className="flex flex-row items-center justify-between mb-20 md:w-3/5">
+              <h2 className="text-4xl font-bold">Su carrito</h2>
+              <Link to="/productos" className="px-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
+                  />
+                </svg>
+              </Link>
+            </div>
+
             <div className="flex flex-col md:flex-row justify-between mt-10">
               <div className="flex flex-col md:w-3/5">
                 <p>
                   {carritoItems.length === 0 ? "El carrito esta vacío" : ""}
                 </p>
                 {carritoItems.map((producto) => (
-                  <div key={producto.id} className="h-full flex flex-col">
-                    <div className="flex flex-row">
-                      <img
-                        src={producto.imagen}
-                        alt={producto.nombre}
-                        className="object-cover md:mr-8 w-40 h-36 md:w-52"
-                        //   width={144}
-                      />
-                      <div className="flex flex-col p-4 justify-between w-full">
-                        <div className="flex justify-between">
-                          <div className="flex flex-col">
-                            <h4 className="font-bold text-sm md:text-base w-3/4 md:w-full">
-                              {producto.nombre}
-                            </h4>
-                            <p className="text-xs md:text-sm md:w-full my-2">
-                              {producto.descripcion}
-                            </p>
-                          </div>
-                          <button
-                            className="h-6 w-6"
-                            onClick={() => deleteProduct(producto.id)}
+                  <div
+                    key={producto.id}
+                    className="h-full flex flex-col md:flex-row"
+                  >
+                    <img
+                      src={producto.imagen}
+                      alt={producto.nombre}
+                      className="object-cover w-40 h-40 mx-auto md:mr-10"
+                    />
+                    <div className="flex flex-col p-4 justify-between w-full">
+                      <div className="flex justify-between">
+                        <div className="flex flex-col">
+                          <h3 className="font-bold text-xl w-4/5 md:w-full">
+                            {producto.nombre}
+                          </h3>
+                        </div>
+                        <button
+                          className="h-6 w-6"
+                          onClick={() => deleteProduct(producto.id)}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="w-6 h-6 hover:text-red-500"
                           >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth={1.5}
-                              stroke="currentColor"
-                              className="w-6 h-6 hover:text-red-500"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M6 18L18 6M6 6l12 12"
-                              />
-                            </svg>
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <div className="flex flex-col md:justify-between md:items-center">
+                        <p className="text-lg w-full my-4">
+                          {producto.descripcion}
+                        </p>
+                        {/* <p className="text-base mb-4 font-medium">Cantidad:</p> */}
+                        <div className="flex justify-evenly items-center md:w-full md:justify-start md:gap-8">
+                          <button
+                            onClick={() => decreaseVal(producto.id)}
+                            className="bg-black rounded-full text-white py-1 px-3 text-lg"
+                          >
+                            -
+                          </button>
+                          <span className="text-base font-medium">
+                            {producto.cantidad}
+                          </span>
+                          <button
+                            onClick={() => increaseVal(producto.id)}
+                            className="bg-black rounded-full text-white py-1 px-3 text-lg"
+                          >
+                            +
                           </button>
                         </div>
-
-                        <div className="flex flex-col md:justify-between md:items-center mt-2">
-                          <p className="text-xs md:text-sm mb-2">Cantidad:</p>
-                          <div className="flex justify-between items-center">
-                            <button
-                              onClick={() => decreaseVal(producto.id)}
-                              className="bg-black rounded-full text-white py-1 px-3 text-lg"
-                            >
-                              -
-                            </button>
-                            {producto.cantidad}
-                            <button
-                              onClick={() => increaseVal(producto.id)}
-                              className="bg-black rounded-full text-white py-1 px-3 text-lg"
-                            >
-                              +
-                            </button>
-                          </div>
-                          <p className="font-bold text-sm text-center">{`$ ${(
-                            producto.precio * producto.cantidad
-                          ).toLocaleString()}`}</p>
-                        </div>
+                        <p className="font-bold text-base text-center md:w-full md:text-start mt-4 ">{`$ ${(
+                          producto.precio * producto.cantidad
+                        ).toLocaleString()}`}</p>
                       </div>
+                      <hr className="my-9" />
                     </div>
-                    <hr className="my-9" />
                   </div>
                 ))}
               </div>
@@ -188,7 +208,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                   <span className="font-bold">{`$ ${total.toLocaleString()}`}</span>
                 </div>
                 <button
-                  className="py-4 px-14 bg-black text-white font-bold uppercase mt-6 mb-7"
+                  className="py-4 px-14 bg-black text-white font-bold uppercase mt-6 mb-7 text-lg"
                   onClick={comprar}
                 >
                   Finalizar pedido

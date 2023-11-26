@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { dataProductos } from "../data/allData";
 import Tabs from "../components/Tabs";
 import { motion } from "framer-motion";
 
 const Productos = ({ tabState, setTabState }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
   const productosFiltrados = dataProductos.filter(
     (producto) => producto.categoria === tabState
   );
@@ -33,7 +36,10 @@ const Productos = ({ tabState, setTabState }) => {
                   <img
                     src={producto.imagen}
                     alt={producto.nombre}
-                    className="object-cover mx-auto w-60"
+                    className={`object-cover mx-auto w-60 ${
+                      isLoading ? "animate-pulse" : ""
+                    }`}
+                    onLoad={() => setIsLoading(false)}
                   />
                   <div className="flex flex-col px-4">
                     <p className="text-sm text-gray-400">

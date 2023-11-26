@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { dataProductos } from "../data/allData";
 import { motion } from "framer-motion";
 import { rtingsg4, gproside, padtiger, keycrone } from "../assets/Images";
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <motion.div
       initial={{ opacity: 0 }} // Estado inicial (invisible)
@@ -15,14 +18,21 @@ const Home = () => {
         style={{ height: 450 }}
       >
         <div className="col-span-2 row-span-2 relative">
-          <img src={rtingsg4} alt="" className="object-cover h-full" />
+          <img
+            src={rtingsg4}
+            alt="rtingsg4"
+            className={`object-cover h-full ${
+              isLoading ? "animate-pulse" : ""
+            }`}
+            onLoad={() => setIsLoading(false)}
+          />
           <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
             Monitores
           </p>
         </div>
 
         <div className="row-span-2 relative">
-          <img src={padtiger} alt="" className="object-cover h-full" />
+          <img src={padtiger} alt="padtiger" className="object-cover h-full" />
           <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
             Mousepads
           </p>
@@ -30,13 +40,21 @@ const Home = () => {
 
         <div className="grid grid-rows-2 row-span-2 gap-3">
           <div className=" relative">
-            <img src={gproside} alt="" className="object-cover h-full" />
+            <img
+              src={gproside}
+              alt="gproside"
+              className="object-cover h-full"
+            />
             <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
               Mouses
             </p>
           </div>
           <div className=" relative">
-            <img src={keycrone} alt="" className="object-cover h-full" />
+            <img
+              src={keycrone}
+              alt="keycrone"
+              className="object-cover h-full"
+            />
             <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
               Teclados
             </p>
