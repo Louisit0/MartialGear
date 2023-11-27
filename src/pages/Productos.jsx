@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { dataProductos } from "../data/allData";
 import Tabs from "../components/Tabs";
@@ -37,10 +37,13 @@ const Productos = ({ tabState, setTabState }) => {
                     src={producto.imagen}
                     alt={producto.nombre}
                     className={`object-cover mx-auto w-60 ${
-                      isLoading ? "animate-pulse" : ""
+                      isLoading ? "hidden" : ""
                     }`}
                     onLoad={() => setIsLoading(false)}
                   />
+                  {isLoading && (
+                    <div className="w-full h-60 animate-pulse bg-slate-200 rounded"></div>
+                  )}
                   <div className="flex flex-col px-4">
                     <p className="text-sm text-gray-400">
                       {producto.categoria}
