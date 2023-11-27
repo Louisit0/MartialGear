@@ -137,14 +137,14 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                 {carritoItems.map((producto) => (
                   <div
                     key={producto.id}
-                    className="h-full flex flex-col md:flex-row"
+                    className="h-full flex flex-col md:flex-row mb-10"
                   >
                     <img
                       src={producto.imagen}
                       alt={producto.nombre}
-                      className="object-cover w-40 h-40 mx-auto md:mr-10"
+                      className="object-cover w-60 h-60 mx-auto md:mx-5"
                     />
-                    <div className="flex flex-col p-4 justify-between w-full">
+                    <div className="flex flex-col p-4 pb-0 justify-between w-full">
                       <div className="flex justify-between">
                         <div className="flex flex-col">
                           <h3 className="font-bold text-xl w-4/5 md:w-full">
@@ -197,7 +197,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                           producto.precio * producto.cantidad
                         ).toLocaleString()}`}</p>
                       </div>
-                      <hr className="my-9" />
+                      <hr className="mt-9" />
                     </div>
                   </div>
                 ))}
