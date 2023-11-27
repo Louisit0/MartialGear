@@ -29,7 +29,7 @@ function App() {
           carritoItems={carritoItems}
         />
       </header>
-      <main className="max-w-6xl mx-auto mb-44">
+      <main className="max-w-6xl mx-auto">
         <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />

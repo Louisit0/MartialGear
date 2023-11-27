@@ -54,7 +54,7 @@ const ProductoDetalle = ({ carritoItems, setCarritoItems }) => {
       animate={{ opacity: 1 }} // Estado animado (visible)
       exit={{ opacity: 0 }} // Estado de salida (invisible)
     >
-      <div className="w-full h-full mt-32 relative">
+      <div className="w-full flex justify-center items-center h-screen">
         <div className="flex flex-col-reverse md:flex-row">
           <div className="w-full md:w-1/2">
             <img
@@ -63,8 +63,27 @@ const ProductoDetalle = ({ carritoItems, setCarritoItems }) => {
               className="object-cover w-2/3 mx-auto md:h-full md:w-full"
             />
           </div>
-          <div className="w-full md:w-1/2 bg-gray-50 py-20 px-10">
+          <div className="w-full md:w-1/2 bg-gray-50 p-10 px-10">
             <div className="flex flex-col justify-center h-full">
+              <Link
+                to="/productos"
+                className="mb-10 w-8 flex justify-start items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                  />
+                </svg>
+              </Link>
               <p className="text-gray-400">{producto.categoria}</p>
               <h2 className="font-bold text-3xl mb-4">{producto.nombre}</h2>
               <p>{producto.descripcion}</p>
@@ -94,25 +113,6 @@ const ProductoDetalle = ({ carritoItems, setCarritoItems }) => {
                 onClick={handleButtonClick}
               >
                 Añadir al carrito
-              </Link>
-              <Link
-                to="/productos"
-                className="mt-4 w-8 flex justify-start items-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
-                  />
-                </svg>
               </Link>
             </div>
           </div>

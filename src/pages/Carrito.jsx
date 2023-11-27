@@ -108,7 +108,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
           animate={{ opacity: 1 }} // Estado animado (visible)
           exit={{ opacity: 0 }} // Estado de salida (invisible)
         >
-          <div className="w-full h-full mt-32 relative px-4">
+          <div className="w-full h-full mt-32 mb-20 relative px-4">
             <div className="flex flex-row items-center justify-between mb-20 md:w-3/5">
               <h2 className="text-4xl font-bold">Su carrito</h2>
               <Link to="/productos" className="px-4">
@@ -123,7 +123,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
+                    d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
                   />
                 </svg>
               </Link>
