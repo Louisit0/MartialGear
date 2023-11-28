@@ -20,7 +20,71 @@ const Home = () => {
       animate={{ opacity: 1 }} // Estado animado (visible)
       exit={{ opacity: 0 }} // Estado de salida (invisible)
     >
-      <div
+      <div className="md:h-screen mt-24 mx-4">
+        <div className="grid grid-cols-2 gap-2 md:gap-4">
+          <div className="relative w-full h-52 md:h-72">
+            <Link to="/productos">
+              <img
+                src={rtingsg4}
+                alt="rtingsg4"
+                className={`object-cover w-full h-full rounded-3xl hover:brightness-75 hover:duration-100 duration-100 ${
+                  isLoading ? "animate-pulse" : ""
+                }`}
+                onLoad={() => setIsLoading(false)}
+              />
+              <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
+                Monitores
+              </p>
+            </Link>
+          </div>
+          <div className=" relative w-full h-52 md:h-72">
+            <Link to="/productos">
+              <img
+                src={keycrone}
+                alt="keycrone"
+                className={`object-cover w-full h-full rounded-3xl hover:brightness-75 hover:duration-100 duration-100 ${
+                  isLoading ? "animate-pulse" : ""
+                }`}
+                onLoad={() => setIsLoading(false)}
+              />
+              <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
+                Teclados
+              </p>
+            </Link>
+          </div>
+          <div className="relative w-full h-52 md:h-72">
+            <Link to="/productos">
+              <img
+                src={padtiger}
+                alt="padtiger"
+                className={`object-cover w-full h-full rounded-3xl hover:brightness-75 hover:duration-100 duration-100 ${
+                  isLoading ? "animate-pulse" : ""
+                }`}
+                onLoad={() => setIsLoading(false)}
+              />
+              <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
+                Mousepads
+              </p>
+            </Link>
+          </div>
+          <div className="relative w-full h-52 md:h-72">
+            <Link to="/productos">
+              <img
+                src={gproside}
+                alt="gproside"
+                className={`object-cover w-full h-full rounded-3xl hover:brightness-75 hover:duration-100 duration-100 ${
+                  isLoading ? "animate-pulse" : ""
+                }`}
+                onLoad={() => setIsLoading(false)}
+              />
+              <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
+                Mouses
+              </p>
+            </Link>
+          </div>
+        </div>
+      </div>
+      {/* <div
         className="w-full grid md:grid-cols-4 gap-3 px-4 md:px-0 mt-28 md:mt-36"
         style={{ height: 450 }}
       >
@@ -88,7 +152,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="mt-32">
         <div className="flex flex-row justify-between">

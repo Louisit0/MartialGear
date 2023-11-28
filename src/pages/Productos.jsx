@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { dataProductos } from "../data/allData";
 import Tabs from "../components/Tabs";
 import { motion } from "framer-motion";
 
 const Productos = ({ tabState, setTabState }) => {
-  const [isLoading, setIsLoading] = useState(true);
-
   const productosFiltrados = dataProductos.filter(
     (producto) => producto.categoria === tabState
   );
@@ -22,7 +20,7 @@ const Productos = ({ tabState, setTabState }) => {
     >
       <div className="flex flex-col my-20">
         <Tabs tabState={tabState} setTabState={setTabState} />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4">
+        <div className="grid md:grid-cols-2 md:grid-cols-3 gap-4 mx-4">
           {productosAVisualizar.map((producto) => (
             <motion.div
               key={producto.id}
@@ -36,14 +34,9 @@ const Productos = ({ tabState, setTabState }) => {
                   <img
                     src={producto.imagen}
                     alt={producto.nombre}
-                    className={`object-cover mx-auto w-60 ${
-                      isLoading ? "hidden" : ""
-                    }`}
-                    onLoad={() => setIsLoading(false)}
+                    loading="lazy"
+                    className="object-cover mx-auto w-60"
                   />
-                  {isLoading && (
-                    <div className="w-full h-60 animate-pulse bg-slate-200 rounded"></div>
-                  )}
                   <div className="flex flex-col px-4">
                     <p className="text-sm text-gray-400">
                       {producto.categoria}

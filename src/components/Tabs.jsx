@@ -11,7 +11,7 @@ const Tabs = ({ tabState, setTabState }) => {
 
   return (
     <div className="mt-5 md:mt-10 text-sm font-medium text-center text-gray-500  border-gray-200 dark:text-gray-400 dark:border-gray-700 mx-auto">
-      <ul className="grid grid-cols-3 lg:grid-cols-6 text-sm font-medium text-center text-gray-500 dark:text-gray-400 mb-7">
+      <ul className="grid grid-cols-3 md:grid-cols-6 text-sm font-medium text-center text-gray-500 dark:text-gray-400 mb-7">
         <li className="m-0">
           <a
             href="#"
