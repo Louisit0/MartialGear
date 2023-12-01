@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
+import icon from "../assets/images/compuicon.png";
 
 const NavBar = () => {
   return (
-    <nav className="flex flex-row fixed top-0 bg-white z-50 w-full justify-between py-5 px-4 md:px-10 md:px-40">
+    <nav className="flex flex-row fixed top-0 bg-white z-50 w-full justify-between py-5 px-4 md:px-40">
       <Link
         to="/"
         className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent tracking-wide"
       >
-        PCGear
+        <img src={icon} alt="icon" className="w-10 h-10" />
       </Link>
       <div className="flex gap-8 text-sm items-center">
         <Link to="/productos" className="flex flex-row gap-3 items-center">
