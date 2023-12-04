@@ -84,80 +84,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <div
-        className="w-full grid md:grid-cols-4 gap-3 px-4 md:px-0 mt-28 md:mt-36"
-        style={{ height: 450 }}
-      >
-        <div className="col-span-2 row-span-2 relative">
-          <Link to="/productos">
-            <img
-              src={rtingsg4}
-              alt="rtingsg4"
-              className={`object-cover h-full ${
-                isLoading ? "animate-pulse" : ""
-              }`}
-              onLoad={() => setIsLoading(false)}
-            />
-            <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
-              Monitores
-            </p>
-          </Link>
-        </div>
-
-        <div className="row-span-2 relative">
-          <Link to="/productos">
-            <img
-              src={padtiger}
-              alt="padtiger"
-              className={`object-cover h-full ${
-                isLoading ? "animate-pulse" : ""
-              }`}
-              onLoad={() => setIsLoading(false)}
-            />
-            <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
-              Mousepads
-            </p>
-          </Link>
-        </div>
-
-        <div className="grid grid-rows-2 row-span-2 gap-3">
-          <div className="relative">
-            <Link to="/productos">
-              <img
-                src={gproside}
-                alt="gproside"
-                className={`object-cover h-full ${
-                  isLoading ? "animate-pulse" : ""
-                }`}
-                onLoad={() => setIsLoading(false)}
-              />
-              <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
-                Mouses
-              </p>
-            </Link>
-          </div>
-          <div className=" relative">
-            <Link to="/productos">
-              <img
-                src={keycrone}
-                alt="keycrone"
-                className={`object-cover h-full ${
-                  isLoading ? "animate-pulse" : ""
-                }`}
-                onLoad={() => setIsLoading(false)}
-              />
-              <p className="text-xl md:text-3xl font-bold absolute bottom-5 left-5 text-white">
-                Teclado
-              </p>
-            </Link>
-          </div>
-        </div>
-      </div> */}
-
       <div className="mt-32">
         <div className="flex flex-row justify-between">
           <h3 className="text-sm md:text-xl font-bold px-4 md:px-0 md:mx-0">
-            🔥 Productos más vendidos
+            🔥 Productos en tendencia
           </h3>
           <Link
             className="flex flex-row text-gray-500 hover:text-black mr-4 md:mr-0 text-sm items-center"
@@ -180,12 +110,12 @@ const Home = () => {
             </svg>
           </Link>
         </div>
-        <div className="grid md:grid-cols-4 mt-10 gap-4 pb-10 mx-4 md:mx-0">
-          {dataProductos.slice(0, 4).map((producto) => (
+        <div className="grid md:grid-cols-3 mt-10 gap-4 pb-10 mx-4 md:mx-0">
+          {dataProductos.slice(0, 3).map((producto) => (
             <Link
               key={producto.id}
               to={`/productos/${producto.id}`}
-              className="cursor-pointer bg-white border border-gray-200 shadow-sm rounded-lg"
+              className="cursor-pointer bg-white border border-gray-200 shadow-sm hover:shadow rounded-lg"
             >
               <div className="w-full h-full flex flex-col justify-between">
                 <img

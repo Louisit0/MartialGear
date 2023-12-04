@@ -109,7 +109,7 @@ const ProductoDetalle = ({ carritoItems, setCarritoItems }) => {
               </div>
               <Link
                 to="/carrito"
-                className="p-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-bold mt-10 md:w-1/2 text-center flex flex-row items-center gap-2 justify-center"
+                className="p-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-bold mt-10 md:w-3/5 text-center flex flex-row items-center gap-2 justify-center text-lg"
                 onClick={handleButtonClick}
               >
                 <svg

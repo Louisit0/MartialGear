@@ -210,7 +210,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                   <span className="font-bold">{`$ ${total.toLocaleString()}`}</span>
                 </div>
                 <button
-                  className="p-3 bg-green-600 hover:bg-green-700 rounded-xl text-white font-bold my-6 flex flex-row items-center gap-2 justify-center"
+                  className="p-3 bg-green-600 hover:bg-green-700 rounded-xl text-white font-bold my-6 flex flex-row items-center gap-2 justify-center text-lg"
                   onClick={comprar}
                 >
                   <svg
