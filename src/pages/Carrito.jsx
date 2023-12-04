@@ -75,7 +75,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
           animate={{ opacity: 1 }} // Estado animado (visible)
           exit={{ opacity: 0 }} // Estado de salida (invisible)
         >
-          <div className="w-full md:w-1/2 h-screen relative flex flex-col mx-auto items-center justify-center">
+          <div className="w-full md:w-1/2 h-screen flex flex-col mx-auto items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -108,7 +108,11 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
           animate={{ opacity: 1 }} // Estado animado (visible)
           exit={{ opacity: 0 }} // Estado de salida (invisible)
         >
-          <div className="w-full h-full mt-32 mb-20 relative px-4">
+          <div
+            className={`w-full mt-32 mb-20 lg:mb-0 px-4 ${
+              carritoItems.length > 0 ? "lg:h-screen" : ""
+            }`}
+          >
             <div className="flex flex-row items-center justify-between mb-20 md:w-3/5">
               <h2 className="text-4xl font-bold">Su carrito</h2>
               <Link to="/productos" className="px-4">
@@ -146,11 +150,9 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                     />
                     <div className="flex flex-col p-4 pb-0 justify-between w-full">
                       <div className="flex justify-between">
-                        <div className="flex flex-col">
-                          <h3 className="font-bold text-xl w-4/5 md:w-full">
-                            {producto.nombre}
-                          </h3>
-                        </div>
+                        <h3 className="font-bold text-xl w-4/5 md:w-full">
+                          {producto.nombre}
+                        </h3>
                         <button
                           className="h-6 w-6"
                           onClick={() => deleteProduct(producto.id)}
@@ -172,18 +174,18 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                         </button>
                       </div>
                       <div className="flex flex-col md:justify-between md:items-center">
-                        <p className="text-lg w-full my-4">
+                        <p className="text-base w-full my-4 lg:mb-6 text-gray-500">
                           {producto.descripcion}
                         </p>
                         {/* <p className="text-base mb-4 font-medium">Cantidad:</p> */}
-                        <div className="flex justify-evenly items-center md:w-full md:justify-start md:gap-8">
+                        <div className="flex justify-start gap-10 items-center md:w-full md:justify-start md:gap-8">
                           <button
                             onClick={() => decreaseVal(producto.id)}
                             className="bg-black rounded-full text-white py-1 px-3 text-lg"
                           >
                             -
                           </button>
-                          <span className="text-base font-medium">
+                          <span className="text-sm font-medium">
                             {producto.cantidad}
                           </span>
                           <button
@@ -193,7 +195,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                             +
                           </button>
                         </div>
-                        <p className="font-bold text-base text-center md:w-full md:text-start mt-4 ">{`$ ${(
+                        <p className="font-bold text-base md:w-full md:text-start mt-4 ">{`$ ${(
                           producto.precio * producto.cantidad
                         ).toLocaleString()}`}</p>
                       </div>
@@ -208,9 +210,23 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                   <span className="font-bold">{`$ ${total.toLocaleString()}`}</span>
                 </div>
                 <button
-                  className="py-4 px-14 bg-black text-white font-bold uppercase mt-6 mb-7 text-lg"
+                  className="p-3 bg-green-600 hover:bg-green-700 rounded-xl text-white font-bold my-6 flex flex-row items-center gap-2 justify-center"
                   onClick={comprar}
                 >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
                   Finalizar pedido
                 </button>
               </div>

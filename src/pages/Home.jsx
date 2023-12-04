@@ -20,7 +20,7 @@ const Home = () => {
       animate={{ opacity: 1 }} // Estado animado (visible)
       exit={{ opacity: 0 }} // Estado de salida (invisible)
     >
-      <div className="md:h-screen mt-24 mx-4">
+      <div className="mx-4 md:mx-0 mt-24 flex flex-col justify-center">
         <div className="grid grid-cols-2 gap-2 md:gap-4">
           <div className="relative w-full h-52 md:h-72">
             <Link to="/productos">

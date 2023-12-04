@@ -20,7 +20,6 @@ const Tabs = ({ tabState, setTabState }) => {
                 ? "active inline-block px-4 py-3 text-white bg-black rounded-lg"
                 : "inline-block px-4 py-3 text-black bg-white rounded-lg hover:bg-gray-50"
             } `}
-            aria-current="page"
             onClick={() => cambiarTab("")}
           >
             Todo
@@ -34,7 +33,6 @@ const Tabs = ({ tabState, setTabState }) => {
                 ? "active inline-block px-4 py-3 text-white bg-black rounded-lg"
                 : "inline-block px-4 py-3 text-black bg-white rounded-lg hover:bg-gray-50"
             } `}
-            aria-current="page"
             onClick={() => cambiarTab("Monitor")}
           >
             Monitores

@@ -1,5 +1,3 @@
-import React from "react";
-
 const Footer = () => {
   return (
     <div className="w-full bg-zinc-800 h-40 flex flex-col md:flex-row items-center justify-evenly text-white">
