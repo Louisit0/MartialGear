@@ -24,7 +24,7 @@ const Productos = ({ tabState, setTabState }) => {
         }`}
       >
         <Tabs tabState={tabState} setTabState={setTabState} />
-        <div className="grid md:grid-cols-3 gap-4 mx-4">
+        <div className="grid md:grid-cols-3 gap-4 px-4 md:px-0">
           {productosAVisualizar.map((producto) => (
             <motion.div
               key={producto.id}

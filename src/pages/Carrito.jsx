@@ -96,7 +96,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
             <p className="my-6">Agregue artículos a su carrito.</p>
             <Link
               to="/productos"
-              className="p-4 bg-black text-white w-2/3 font-bold rounded-xl text-center text-lg flex flex-row gap-2 items-center justify-center"
+              className=" bg-black text-white w-2/3 font-bold rounded-xl text-center text-lg flex flex-row gap-2 items-center justify-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -123,13 +123,13 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
           exit={{ opacity: 0 }} // Estado de salida (invisible)
         >
           <div
-            className={`w-full mt-32 mb-20 lg:mb-0 px-4 ${
+            className={`w-full mt-32 mb-20 lg:mb-0 px-4 md:px-0 ${
               carritoItems.length > 0 ? "lg:h-screen" : ""
             }`}
           >
             <div className="flex flex-row items-center justify-between mb-20 md:w-3/5">
               <h2 className="text-4xl font-bold">Su carrito</h2>
-              <Link to="/productos" className="px-4">
+              <Link to="/productos" className="px-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -162,7 +162,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                       alt={producto.nombre}
                       className="object-cover w-60 h-60 mx-auto md:mx-5"
                     />
-                    <div className="flex flex-col p-4 pb-0 justify-between w-full">
+                    <div className="flex flex-col pb-0 justify-between w-full">
                       <div className="flex justify-between">
                         <h3 className="font-bold text-xl w-4/5 md:w-full">
                           {producto.nombre}
@@ -218,7 +218,7 @@ const Carrito = ({ carritoItems, setCarritoItems }) => {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col md:w-1/3 px-4">
+              <div className="flex flex-col md:w-1/3 px-4 md:px-0">
                 <div className="flex justify-between">
                   <span className="font-bold">Total:</span>
                   <span className="font-bold">{`$ ${total.toLocaleString()}`}</span>
